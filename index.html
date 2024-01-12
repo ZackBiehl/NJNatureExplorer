@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html style="background-color: rgb(248, 248, 224);">
+
+
+<head>
+    <style>
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 50%;
+            position: relative;
+        }
+
+        .sidebar img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .text-container {
+            width: 40%;
+        }
+
+        .county-text {
+            position: absolute;
+            top: 50%;
+            left: 85%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            text-align: center;
+            color: rgb(33, 138, 120);
+            font-weight: bold;
+            font-size: 400%;
+        }
+
+        p {
+            text-align: center;
+            border-bottom: 5px solid rgb(33, 138, 120);
+            margin-bottom: 0;
+            padding-bottom: 10px;
+        }
+        #centered{
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        a{
+            border: 3px solid rgb(33, 138, 120);
+            border-radius: 10px;
+            font-size: 30px;
+            background-color: rgb(186, 243, 198);
+    
+        }
+        .centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>NJ Nature Explorer</title>
+</head>
+
+<body>
+    <h1 style="text-align: center; color: rgb(33, 138, 120); border: 10px; border-color: rgb(33, 138, 120); border-style: solid; background-color: rgb(186, 243, 198); margin-top: 0%; border-radius: 20px; font-size: 40px;">
+        NJ Nature Explorer
+    </h1>
+    <p style="font-size: 25px; font-weight: bold; color: rgb(33, 138, 120); border-bottom: 0px;">Click a county on the map to learn more about it!</p>
+
+    <div class="content-container">
+        <div class="sidebar">
+            <div id="map-container">
+                <!-- img map -->
+                <img src="imgs/nj final.png" usemap="#njMap" alt="New Jersey Map" style="width: 518px; height: 932.4;">
+                <!-- every countys map coords, link to county page and the county text -->
+                <map name="njMap">
+                    <area shape="poly" coords="245,624 263,640 268,656 282,660 284,668 298,671 305,678 323,684 330,682 336,
+                    701 359,710 341,735 303,761 276,761 262,765 217,760 210,754 213,721 179,693" href="atlantic.html" alt="Atlantic County" 
+                    onmouseover="showCountyText('Atlantic County')" onmouseout="hideCountyText()">
+
+                    
+                    <area shape="poly" coords="217,772 236,777 277,784 299,782 298,790 281,808 258,840 259,846 244,868 239,877 213,
+                    897 191,901 188,888 196,867 209,838 200,805 209,801" href="capeMay.html" alt="Cape May County" onmouseover="showCountyText('Cape May County')" 
+                    onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="105,706 145,736 147,726 147,719 149,716 149,702 204,747 205,
+                    766 199,772 203,781 196,787 194,808 186,811 185,817 189,825 161,823 157,815 136,819 134,825 123,818 123,806 115,
+                    807 115,802 104,797 105,790 96,788 90,791 85,788 79,773 71,776 65,768 60,757 58,743 62,737 71,737 77,730 84,727 84,727 84,
+                    727 93,718 93,718 93,718 93,718 " href="cumberland.html" alt="Cumberland County" onmouseover="showCountyText('Cumberland County')" onmouseout="hideCountyText()">
+                    
+
+
+                    <area shape = "poly" coords = "107,655 142,686 137,696 139,704 138,708 138,715 136,720 95,689 75,711 68,711 65,715 63,721 53,721 47,727 51,
+                    730 49,735 49,741 42,739 29,725 18,720 12,708 18,709 22,701 17,695 24,686 14,675 14,666 26,652 26,644 34,640 38,626 45,619 53,620 53,625 60,
+                    630 64,641 89,651 95,656" href="salem.html" alt = "Salem County" onmouseover="showCountyText('Salem County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords = "193,657 166,686 111,639 103,639 98,640 93,635 75,631 61,612 56,610 58,606 53,602 63,597 63,592 85,585 90,587 98,
+                    581 108,581 113,576 127,575 139,583 139,593 144,595 146,601 152,605 157,619 163,621 165,628 183,633 183,633 183,633" href="gloucester.html" alt = "Gloucester County"
+                    onmouseover="showCountyText('Gloucester County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="159,531 167,534 167,539 168,546 177,548 178,555 183,555 186,563 190,566 197,595 203,597 210,594 220,594 239,613 203,
+                    650 200,649 195,640 193,630 178,621 171,616 166,615 165,605 153,591 149,585 149,576 142,570 138,563 138,549 140,543 146,543 149,540 153,539 153,539" href="camden.html" alt = "Camden County"
+                    onmouseover="showCountyText('Camden County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="288,474 342,594 340,647 332,656 330,656 326,660 322,655 316,656 309,652 304,652 297,642 292,644 284,637 271,635 271,621 227,
+                    585 214,586 206,583 199,553 186,541 178,535 177,522 168,516 180,508 195,500 210,497 227,480 241,479 255,469 257,461 265,462 267,467 279,469 279,475" href="burlington.html" 
+                    alt="Burlington County"onmouseover="showCountyText('Burlington County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="314,505 352,480 393,482 399,498 410,499 420,504 431,494 437,497 437,506 455,508 433,610 415,648 387,686 369,
+                    687 369,680 364,677 350,678 346,669 352,662 356,603" href="ocean.html" alt="Ocean County"onmouseover="showCountyText('Ocean County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="293,453 310,484 348,457 386,457 385,464 391,469 391,475 407,474 413,480 423,466 431,470 433,479 447,478 448,
+                    457 455,450 467,392 459,363 450,363 453,381 433,376 418,369 407,368 391,372 388,384 350,419 350,423 333,432 325,430 325,435 305,450" href="monmouth.html" alt="Monmouth County"onmouseover="showCountyText('Monmouth County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="188,394 209,394 205,385 223,381 222,372 238,370 245,385 264,381 270,382 270,400 306,416 307,427 290,
+                    437 287,443 274,446 278,459 272,459 257,449 250,448 251,455 246,455 237,442 230,433 215,425 205,407 194,402" href="mercer.html" 
+                    alt="Mercer County"onmouseover="showCountyText('Mercer County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="394,349 387,353 386,364 348,398 346,402 330,410 324,407 324,399 306,395 287,383 289,369 295,367 300,
+                    355 311,351 324,337 337,332 326,327 316,308 323,303 372,298 377,305 384,304 387,301 398,301 395,313 388,316 384,329 383,334" href="middlesex.html" 
+                    alt="Middlesex County"onmouseover="showCountyText('Middlesex County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="244,259 248,264 244,268 248,273 244,278 247,281 244,286 251,291 244,298 248,
+                    304 244,313 239,311 232,326 225,323 246,368 264,362 273,368 280,362 281,354 306,338 320,330 313,326 304,322 297,306 325,289 327,278 316,281 313,274 300,281 300,281 295,274 300,265 290,254 289,246" href="somerset.html" 
+                    alt="Somerset County"onmouseover="showCountyText('Somerset County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="186,231 204,245 227,253 232,257 229,260 231,264 226,270 230,274 228,279 233,
+                    283 229,293 233,297 228,303 224,304 217,319 212,323 221,345 207,348 208,358 192,361 195,370 173,371 164,
+                    351 156,349 149,351 140,342 141,327 139,307 127,296 112,300 107,295 115,282 128,278 138,267 150,261 166,
+                    256 172,245 172,245 172,245" href="hunterdon.html" 
+                    alt="Hunterdon County"onmouseover="showCountyText('Hunterdon County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="335,264 336,274 350,271 345,282 333,292 375,289 382,295 391,291 401,291 401,
+                    281 417,269 414,263 401,263 397,257 379,252 376,254 366,252 359,246" href="union.html" 
+                    alt="Union County"onmouseover="showCountyText('Union County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="377,186 377,198 382,201 378,217 370,222 369,239 381,247 391,245 406,
+                    246 412,255 425,255 429,257 434,249 436,238 425,238 424,230 430,213 402,191 398,194 395,191" href="essex.html" 
+                    alt="Essex County"onmouseover="showCountyText('Essex County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="306,130 310,133 308,145 319,140 323,144 323,150 331,147 337,151 344,
+                    150 352,155 360,155 365,164 363,179 369,184 366,188 353,184 354,214 345,219 344,234 344,239 323,
+                    256 322,261 315,261 307,264 305,257 308,251 296,233 252,246 227,240 211,227 222,219 229,202 237,
+                    188 246,185 254,191 273,178 271,170" href="morris.html" 
+                    alt="Morris County"onmouseover="showCountyText('Morris County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="168,113 218,169 210,180 199,203 186,208 168,232 148,239 111,268 108,
+                    249 109,240 106,234 111,225 108,216 117,209 125,212 136,199 134,187 144,184 124,145" href="warren.html" 
+                    alt="Warren County"onmouseover="showCountyText('Warren County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="477,204 484,211 470,229 467,244 456,245 457,251 443,252 443,244 451,239 445,
+                    225 437,224 442,209 453,215 461,207" href="hudson.html" 
+                    alt="Hudson County"onmouseover="showCountyText('Hudson County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="421,92 501,130 497,153 484,190 477,185 461,192 457,202 444,196 450,169 439,
+                    142 419,139 409,129 " href="bergen.html" 
+                    alt="Bergen County"onmouseover="showCountyText('Bergen County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="353,67 394,88 382,126 391,137 414,140 425,174 422,186 391,165 387,169 383,
+                    159 378,156 378,140 375,132 344,124 339,127 333,118 322,125 320,106 " href="passaic.html" 
+                    alt="Passaic County"onmouseover="showCountyText('Passaic County')" onmouseout="hideCountyText()">
+
+                    <area shape="poly" coords="253,14 339,62 265,139 267,147 249,157 242,153 234,155 183,98 174,97 182,
+                    89 198,78 210,57 208,50 215,44 215,36 231,24 241,17 " href="sussex.html" 
+                    alt="Sussex County"onmouseover="showCountyText('Sussex County')" onmouseout="hideCountyText()">
+                </map>   
+                    
+                
+            </div>
+            <div class="county-text" id="countyText">County Name</div>
+        </div>
+
+        <div class="text-container" >
+            <p style="font-size: 25px;">A short overview of the environment and ecosystems within New Jersey! <br> </p>
+            <p style="line-height: 30px; font-size: larger;">
+                Located in the North Eastern part of the United States, New Jersey is well known for its landscapes, 
+                diverse ecosystems and incredible wildlife. The state is home, to a range of habitats that support plants 
+                and animals spanning from sea level up to an elevation of 1,823 feet (550m). Within the forests of this region 
+                you can find bears, white-tailed deer and other fascinating creatures. The captivating marshes also attract migratory birds. 
+                Vigorous conservation efforts are consistently being carried out to protect this biodiversity and ensure the well being 
+                of New Jerseys ecosystems. With its abundance of nature based activities and a strong commitment to preservation, New Jersey 
+                offers a blend where nature seamlessly intertwines with human involvement.
+                
+
+                
+            </p>
+            <p style="border: 0px; font-size: 18px;">If the map is not interactive it may be because the screen is too small, to fix this try zooming out (CTRL/CMND + "-" or scroll wheel) <br> likewise, if the text and overall screen looks a bit funky, zoom out! :)</p>
+        </div>
+
+        
+        
+    </div>
+    
+    <!-- <div  style="border: 10px; border-color: rgb(33,138,120); border-style: solid; background-color: rgb(186, 243, 198);border-radius: 25px;">
+        <h1 style="text-align: center; color: rgb(11, 83, 71);">
+            About Me
+        </h1>
+        <p id = "centered" style="border-width: 0px;" >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsum 
+            obcaecati non, assumenda iusto dolores magnam earum deleniti modi consectetur 
+            repellat nesciunt harum debitis perferendis ex ullam doloribus quis corporis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsum 
+            obcaecati non, assumenda iusto dolores magnam earum deleniti modi consectetur 
+            repellat nesciunt harum debitis perferendis ex ullam doloribus quis corporis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsum 
+            obcaecati non, assumenda iusto dolores magnam earum deleniti modi consectetur 
+            repellat nesciunt harum debitis perferendis ex ullam doloribus quis corporis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsum 
+            obcaecati non, assumenda iusto dolores magnam earum deleniti modi consectetur 
+            repellat nesciunt harum debitis perferendis ex ullam doloribus quis corporis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ipsum 
+            obcaecati non, assumenda iusto dolores magnam earum deleniti modi consectetur 
+            repellat nesciunt harum debitis perferendis ex ullam doloribus quis corporis.
+        </p>
+    </div > -->
+    <!-- <div style="border-top: 10px solid rgb(33,138,120);">
+    
+    </div> -->
+    <div class="centered-container" style="margin-top: 0%;">
+        <a href="aboutMe.html">About Me!</a>
+    </div>
+    <div class="centered-container" style="margin-top: 0%; font-size: larger;">
+        <p>Quick Note! - While New Jersey has diverse ecosystems and environments there is not much different between counties that are close by. <br>
+            Instead of going region by region, I chose county by county so the parks and reserves are more specific since I thought that was important! <br>
+            Also, if you are using a phone or the intereactive map is not working, press the County List for the list of clickable counties!</p>
+    </div>
+    
+  <div  style=" margin-top: 10px; display: grid; grid-template-columns: repeat(1,2fr); border-top: 0px; gap: 20px;text-align: center;">
+        <li><a href="backUpCountySelector.html">County List</a></li>
+        
+
+    </div>
+
+    
+    <script>
+        function showCountyText(county) {
+            var countyText = document.getElementById('countyText');
+            countyText.innerHTML = county;
+            countyText.style.opacity = 1;
+        }
+
+        function hideCountyText() {
+            var countyText = document.getElementById('countyText');
+            countyText.style.opacity = 0;
+        }
+    </script>
+
+
+        
+</body>
+
+</html>
